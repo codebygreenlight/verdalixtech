@@ -1739,3 +1739,24 @@ body {
     height: 80px;
   }
 }
+
+/* Optimize images and assets loading */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Add content-visibility for better performance */
+.solutions-grid,
+.services-container,
+.testimonials-grid {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 5000px;
+}
+
+/* Ensure proper font display */
+@font-face {
+  font-family: 'Space Grotesk';
+  font-display: swap;
+}

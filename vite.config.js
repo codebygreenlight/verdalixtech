@@ -5,6 +5,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   build: {
+    outDir: 'dist',
     minify: 'terser',
     terserOptions: {
       compress: {
@@ -15,12 +16,14 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          vendor: ['react', 'react-dom'],
-          // Add other large dependencies here
+          vendor: ['react', 'react-dom']
         }
       }
     },
     chunkSizeWarningLimit: 1000
+  },
+  css: {
+    postcss: false // Disable PostCSS processing
   },
   server: {
     port: 3000,
